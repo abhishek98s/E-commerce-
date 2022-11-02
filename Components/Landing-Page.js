@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css'
 
+
 export default function LandingPage(){
     function topFunction() {
         document.body.scrollTop = screen.height;
