@@ -3,6 +3,13 @@
 @tailwind utilities;
 @import url('http://fonts.cdnfonts.com/css/anurati');
 
+@font-face {
+  font-family: 'Anurati Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Anurati Regular'), url('../public/Anurati-Regular.woff') format('woff');
+  }
+
 html,
 body {
   padding: 0;
