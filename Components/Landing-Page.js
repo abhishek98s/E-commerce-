@@ -1,12 +1,12 @@
 import styles from '../styles/Home.module.css'
 
-
 export default function LandingPage(){
+
     function topFunction() {
         document.body.scrollTop = screen.height;
         document.documentElement.scrollTop = screen.height;
       }
-      
+
         return (
           <>
             <div className={styles.backgroundimg}>
@@ -31,35 +31,38 @@ export default function LandingPage(){
             </div>
 
 
-            <div>
+            <div className={styles.categoty}>
                 <h2>Product Categories</h2>
 
                 <div className={styles.product_category}>
+                    
                     <div>
-                        <p>Some Text</p>
+                        <p className={styles.show_text}>Some Text</p>
                     </div>
 
                     <div>
-                        <p>Some Text</p>
+                        <p className={styles.show_text}>Some Text</p>
                     </div>
 
                     <div>
-                        <p>Some Text</p>
+                        <p className={styles.show_text}>Some Text</p>
                     </div>
 
                     <div>
-                        <p>Some Text</p>
+                        <p className={styles.show_text}>Some Text</p>
                     </div>
 
                     <div>
-                        <p>Some Text</p>
+                        <p className={styles.show_text}>Some Text</p>
                     </div>
 
                     <div>
-                        <p>Some Text</p>
+                        <p className={styles.show_text}>Some Text</p>
                     </div>
                 </div>
             </div>
+
+            
       
             </>
         )
