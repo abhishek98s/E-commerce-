@@ -144,7 +144,7 @@
 .categoty h2{
   font-size: 1.5rem;
   text-align: center;
-  margin: 2rem 0;
+  margin: 4rem 0 0 0;
 }
 
 .product_category{
@@ -153,7 +153,7 @@
   column-gap: 2rem;
   place-items: center;
   grid-template-columns: 0.8fr 0.8fr 0.8fr;
-  margin: 5rem 4%;
+  margin: 2rem 4% 6rem 4%;
 }
 
 .product_category > div{
