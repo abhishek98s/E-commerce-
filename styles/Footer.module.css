@@ -16,6 +16,14 @@
     margin: 0 4%;
 }
 
+.footer_box a:first-of-type{
+  font-size: 1.3rem;
+}
+
+.footer_box a{
+  font-size: 0.8rem;
+}
+
 .logo{
     font-family: anurati;
 }
