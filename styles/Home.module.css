@@ -269,15 +269,24 @@
     display: block;
     grid-area: menu;
   }
+
+  .slogen{
+    font-size: 12vw;
+    margin: 0 3%;
+  }
+
+  .backgroundimg > p{
+    font-size: 5vw;
+  }
   
   
 .product_category{
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:1fr 1fr;
 }
 
 .product_category > div{
-  width: 80%;
-  height: 35vw;
+  width: 100%;
+  height: 40vw;
 }
   
 }

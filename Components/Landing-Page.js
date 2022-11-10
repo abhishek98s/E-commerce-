@@ -52,7 +52,7 @@ export default function LandingPage(){
                 <div style={{
                   backgroundImage: `url(${product.image})`}
                 }>
-                  <p>Somsdsdse Text</p>
+                <p>ription</p>
                 </div>
               </>
               )}
