@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 const json = require('../public/db.json')
+import Link from 'next/link'
 import styles from '../styles/Login.module.css'
 
 function Login(){
@@ -92,7 +93,7 @@ function Login(){
                 
 
                 <input className={styles.input} type='submit' value="Login" />
-                <p>Don't have a account? <a href="">Register here</a></p>
+                <p>Don't have a account? <Link href='./register' legacyBehavior><a className={styles.register}>Register here</a></Link></p>
                 
 
             </form>
