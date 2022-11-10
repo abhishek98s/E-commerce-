@@ -1,4 +1,3 @@
-import '../styles/Login.module.css'
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 const json = require('../public/db.json')
