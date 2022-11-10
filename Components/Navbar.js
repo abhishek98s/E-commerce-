@@ -23,6 +23,7 @@ export default function Navbar(){
                 <Link href="/hg" legacyBehavior><a onClick={onToggle}>Products</a></Link>
                 <Link href="" legacyBehavior><a onClick={onToggle}>Blogs</a></Link>
                 <Link href="/about" legacyBehavior><a onClick={onToggle}>About Us</a></Link>
+                <Link href="/login" legacyBehavior><a onClick={onToggle}>Login</a></Link>
             </div>
 
             <div className={styles.side_menu} onClick={onToggle}>
