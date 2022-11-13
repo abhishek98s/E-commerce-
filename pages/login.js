@@ -5,14 +5,26 @@ import Link from 'next/link'
 import styles from '../styles/Login.module.css'
 
 function Login(){
-    const [data, setData] = useState(json)  
+    const [data, setData] = useState([
+        {
+            "id": 1,
+            "email": "abhishek@gmail.com",
+            "password" : "abhishek123"
+        },
+        
+        {
+            "id": 2,
+            "email": "jhon@gmail.com",
+            "password" : "jhon123"   
+        }
+        ])  
     
-    // useEffect(()=>{
-    //     axios
-    //     .get("https://fakerapi.it/api/v1/users")
-    //     .then(data => setData(data.data.data))
-    //     .catch(error => console.log(error));
-    // }, []);
+    useEffect(()=>{
+        // axios
+        // .get("https://app.fakejson.com/q/A9pVo0Pp?token=jDPRaJetqhMzm7Icq7-_fg")
+        // .then(data => setData(data.data.data))
+        // .catch(error => console.log(error));
+    }, []);
 
     // console.log(data)
         
@@ -33,6 +45,10 @@ function Login(){
     }
 
     const handleEmailChange=(e)=>{
+
+        if(email==12){
+            setError(null)
+        }
 
         if(!isValidEmail(e.target.value)){
             setError("Email is invalid");
@@ -61,22 +77,44 @@ function Login(){
 
     const submit = (e) =>{
         // console.log(data[0].email)
-        // console.log(email)
+        console.log("email")
         e.preventDefault()
-        for (let i=0; i < data.length; i++){
-            console.log(data[i].email)
-            console.log(email)
-            console.log(data[i].password)
-            console.log(pass)
-            if(data[i].email === email && data[i].password === pass){
-                alert("as")
-                console.log("sd")
+
+        if(email !== "" && pass !== ""){
+            for (let i=0; i < data.length; i++){
+                console.log(data[i].email)
+                console.log(email)
+                console.log(data[i].password)
+                
+                if(data[i].email === email && data[i].password === pass){
+                    alert("Loged in")
+                    setError(null)
+                    setPerror(null)
+                    break;
+                }
+                
+                if(data[i].email !== email && data[i].password !== pass){
+                    setError("Email is incorrect")
+                    setPerror("Password is incorrect")
+                    console.log("y")
+                }
             }
-        }
+        }else{
+            setError("fill the box")
+            setPerror("Fill the passowrd")
+        }   
         
     }
+
+    const loginClick=(e)=>{
+        e.target.style.backgroundImage= "red";
+    }
     return(
-        <>
+        <>  
+            <br/>
+            <br/>
+        <br/>
+            <br/>
             <form className={styles.login_box} onSubmit={submit}>
                 <h1>Login</h1>
 
@@ -92,7 +130,7 @@ function Login(){
                 <p className={styles.error}>{perror}</p>
                 
 
-                <input className={styles.input} type='submit' value="Login" />
+                <input className={styles.input} onClick={loginClick} type='submit' value="Login" />
                 <p>Don't have a account? <Link href='./register' legacyBehavior><a className={styles.register}>Register here</a></Link></p>
                 
 

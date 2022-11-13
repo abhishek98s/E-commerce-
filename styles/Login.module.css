@@ -1,18 +1,16 @@
-
 .login_box{
     background-color: #303030;
-    width: 350px;
-    min-height: auto;
-    border-radius: 10px;
+    width: 20rem;
     margin: auto;
-    transform: translate(0, 50%);
-    margin-bottom: -100%;
+    min-height: 30rem;
+    margin-top: 2rem;
+    border-radius: 10px;
     padding: 1rem 2.5rem;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.247);
+    box-shadow: 1px 1px 20px rgba(70, 61, 61, 0.247);
     
   }
   
-  .login_box h1{
+  .login_box h1, .register_box h1{
     margin: 0.6rem 0 1.5rem 0;
     font-weight: 500;
     font-size: 2rem;
@@ -44,6 +42,7 @@
     max-width: 250px;
     text-align: justify;
     font-size: 0.8rem;
+    min-height: 1.5rem;
   }
   
   .label{
@@ -67,6 +66,36 @@
     font-size: 1.2rem;
   }
 
+  .input[type="submit"]:hover{
+    background-color: rgb(255, 94, 36);
+  }
+
   .register{
     color: orangered;
+    text-decoration: underline;
+  }
+
+  .register_box{
+    background-color: #303030;
+    width: 20rem;
+    margin: auto;
+    min-height: 30rem;
+    border-radius: 10px;
+    padding: 1rem 2.5rem;
+    margin-top: 2rem;
+    box-shadow: 1px 1px 20px rgba(70, 61, 61, 0.247);
+  }
+
+  .registerinput{
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0.5rem 0 0rem 0;
+    min-height: 2.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: black;
+    border: 2.5px solid rgb(209, 209, 209);
+    outline: rgba(0, 195, 255, 0.514);
+    margin: 0 0 1rem 0;
   }

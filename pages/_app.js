@@ -7,9 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
   <> 
     <Layout> 
-    <Head>
-    <link href="http://fonts.cdnfonts.com/css/anurati" rel="stylesheet" />
-    </Head>
+    
       <Component {...pageProps} />
     </Layout>
   </>
