@@ -73,6 +73,7 @@
   .register{
     color: orangered;
     text-decoration: underline;
+    display: block;
   }
 
   .register_box{

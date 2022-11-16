@@ -8,6 +8,13 @@ export default function LandingPage(){
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
     .then(data => setProductData(data.data))
+    
+    const json = JSON.stringify({ user: {
+      username: "as",
+      password: "sd"
+    } });
+    console.log(json)
+    
   }, [])
   console.log(productData)
 
@@ -15,6 +22,10 @@ export default function LandingPage(){
   function topFunction() {
       document.body.scrollTop = window.innerHeight;
       document.documentElement.scrollTop = window.innerHeight;
+  }
+
+  function showAddToCart(e){
+    e.target.style.display = "block";
   }
 
   return (
@@ -52,7 +63,9 @@ export default function LandingPage(){
                 <div key={product.price} className={styles.productList} style={{
                   backgroundImage: `url(${product.image})`}
                 }>
+                  {/* <div className={styles.itemhover}>
                   <button className={styles.addToCart}>Add to cart</button>
+                  </div> */}
                 </div>
               </>
               )}

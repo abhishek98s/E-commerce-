@@ -3,8 +3,8 @@ import { useState } from 'react'
 import styles from '../styles/Login.module.css'
 
 export default function Register(){
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     function onEmailChange(e){
         setEmail(e.target.value)
@@ -13,13 +13,23 @@ export default function Register(){
     function onPasswordChange(e){
         setPassword(e.target.value)
     }
+
+    function submitRegister(e){
+        e.preventDefault();
+        const myobject = {
+            email: email,
+            password: password
+        }
+        const a = JSON.stringify(myobject);
+        console.log(a)
+    }
     return(
         <>
         <br/>
         <br/>
         <br/>
         <br/>
-        <form className={styles.register_box}>
+        <form className={styles.register_box} onSubmit={submitRegister}>
             <h1>Register</h1>
             
             <label htmlFor="name">Full Name</label>

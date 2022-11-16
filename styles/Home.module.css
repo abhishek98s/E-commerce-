@@ -152,45 +152,19 @@
   gap: 1.5rem;
   column-gap: 2rem;
   place-items: center;
-  grid-template-columns: 0.5fr 0.5fr 0.5fr;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
   margin: 2rem 4% 6rem 4%;
 }
 
 .product_category > div{
   background-color: #2B2B2B;
   background-image: url('../public/images/Annapurna.png');
-  width: 80%;
-  height: 20vw;
+  width: 70%;
+  height: 16vw;
   background-position: center center ;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-
-.product_category > div:nth-child(1){
-  background-image: url('../public/images/men.webp');
-}
-
-.product_category > div:nth-child(2){
-  background-image: url('../public/images/women.webp');
-}
-
-.product_category > div:nth-child(3){
-  background-image: url('../public/images/medicine.jpg');
-}
-
-.product_category > div:nth-child(4){
-  background-image: url('../public/images/tech.jpg');
-}
-
-.product_category > div:nth-child(5){
-  background-image: url('../public/images/furniture.jpg');
-}
-
-.product_category > div:nth-child(6){
-  background-image: url('../public/images/books.jpg');
-}
-
-
 
 .product_category > div:hover{
   animation-name: zoombg;
@@ -211,6 +185,7 @@
 .productList{
   position: relative;
 }
+
 .addToCart{
   position: absolute;
   bottom: 0;
@@ -242,14 +217,31 @@
     animation-duration: 0.5s;
   }
 
+  .active a{
+    animation-name: activea;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes activea {
+    from{
+      font-size: 0rem;
+    }
+
+    to {
+      font-size: 1rem;
+    }
+  }
+
   @keyframes sidemenu {
     from{
       min-width: 0rem;
-      overflow: hidden;
+      display:none;
     }
 
     to {
       min-width: 16rem;
+      font-size: 1rem;
+      display:block;
     }
   }
 
