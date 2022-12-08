@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import { useEffect, useState } from 'react';
 
-function products() {
+function Products() {
     const [productData, setProductData] = useState([]);
 
     useEffect(() => {
@@ -38,7 +38,7 @@ function products() {
                             <div className={styles.productcard}>
                                 <div className={styles.product_top}>
                                     <div className={styles.product_img}>
-                                        <img src={product.image} />
+                                        <img src={product.image} alt={product.title} />
                                     </div>
                                 </div>
 
@@ -55,5 +55,3 @@ function products() {
         </>
     )
 }
-
-export default products;
