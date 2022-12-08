@@ -1,5 +1,5 @@
 import styles from "../styles/Home.module.css"
-import img from '../public/images/books.jpg'
+import Image from "next/image";
 import axios from 'axios'
 
 import { useEffect, useState } from 'react';
@@ -38,7 +38,7 @@ function Products() {
                             <div className={styles.productcard}>
                                 <div className={styles.product_top}>
                                     <div className={styles.product_img}>
-                                        <img src={product.image} alt={product.title} />
+                                        <Image src={product.image} alt={product.title} />
                                     </div>
                                 </div>
 
