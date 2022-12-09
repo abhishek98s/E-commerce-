@@ -1,6 +1,8 @@
 import styles from '../styles/Home.module.css'
-import img from '../public/images/books.jpg'
+
 export default function LandingPage() {
+
+  
 
   function topFunction() {
     document.body.scrollTop = window.innerHeight;

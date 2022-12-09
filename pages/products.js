@@ -7,8 +7,8 @@ import { useEffect, useState } from 'react';
 function Products() {
     const [productData, setProductData] = useState([]);
 
-    useEffect(() => {
-        axios.get('https://fakestoreapi.com/products')
+    useEffect(async() => {
+        await axios.get('https://fakestoreapi.com/products')
             .then(data => setProductData(data.data))
 
         const json = JSON.stringify({
@@ -38,7 +38,7 @@ function Products() {
                             <div className={styles.productcard}>
                                 <div className={styles.product_top}>
                                     <div className={styles.product_img}>
-                                        <Image src={product.image} alt={product.title} />
+                                        <Image src={product.image} alt={product.title} width="200" height="200"/>
                                     </div>
                                 </div>
 
@@ -56,4 +56,4 @@ function Products() {
     )
 }
 
-export default Products;
+export default Products
