@@ -7,17 +7,21 @@ import { useEffect, useState } from 'react';
 function Products() {
     const [productData, setProductData] = useState([]);
 
-    useEffect(async() => {
+    const apiData = async() =>{
         await axios.get('https://fakestoreapi.com/products')
             .then(data => setProductData(data.data))
 
-        const json = JSON.stringify({
-            user: {
-                username: "as",
-                password: "sd"
-            }
-        });
-        console.log(json)
+    }
+
+    useEffect(() => {
+        apiData();
+        // const json = JSON.stringify({
+        //     user: {
+        //         username: "as",
+        //         password: "sd"
+        //     }
+        // });
+        // console.log(json)
 
     }, [])
     console.log(productData)

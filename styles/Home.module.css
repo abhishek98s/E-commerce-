@@ -239,6 +239,7 @@
   height: 2em;
   background-color: orangered;
   min-width: 100%;
+  box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .product_down button:hover{
