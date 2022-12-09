@@ -310,6 +310,7 @@
   grid-template-columns: 0.5fr 1fr 0.3fr;
   gap: 0.5em;
   margin: 0 4%;
+  position: relative;
   align-items: center;
   border-top: 2px rgba(0, 0, 0, 0.5) solid;
   padding: 0.5em;
@@ -357,6 +358,26 @@
 .close_button svg{
   width: 100%;
   height: auto;
+}
+
+
+.total_price{ 
+  display: grid;
+  grid-template-columns: 1fr 0.3fr;
+  position: absolute;
+  bottom: 0;
+  height: 10em;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px rgba(0, 0, 0, 0.5) solid;
+  padding: 0 4%;
+}
+
+.total_price p{
+  text-align: center;
+  font-size: 2em;
+  border-right: 2px white solid;
 }
 
 @media only screen and (max-width: 769px){

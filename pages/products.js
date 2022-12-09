@@ -80,6 +80,7 @@ function Products() {
                 <section className={styles.cart_products}>
                     <img src={books.src} />
                     <h2>title</h2>
+                    
                     <div className={styles.cart_price}>
                         <button className={styles.close_button}>
                         <svg className={styles.close_svg} width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,6 +103,11 @@ function Products() {
                             </div>
                         </div>
                     </div>
+                </section>
+
+                <section className={styles.total_price}>
+                    <p>Total</p>
+                    <p>$<span>23</span></p>
                 </section>
             </div>
         </section>
