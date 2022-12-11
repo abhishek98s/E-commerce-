@@ -295,7 +295,7 @@
   width: 25em;
   height: 100%;
   background-color: #0c0c0c;
-  transition: all 1s ease;
+  transition: right 0.2s ease 0s;
 }
 
 .cartSidebar_active{
@@ -306,7 +306,7 @@
   width: 25em;
   height: 100%;
   background-color: #0c0c0c;
-  transition: all 1s ease;
+  transition: right 0.2s ease 0s;
 }
 
 .cartLogo{
