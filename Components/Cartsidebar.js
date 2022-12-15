@@ -11,6 +11,7 @@ export default function Cart(props) {
     let clicked_products_index = props.filter;
     console.log(clicked_products_index)
 
+    const setIndex = props.func;
 
     const myArrayFiltered = clicked_products.filter((el) => {
         return clicked_products_index.some((f) => {
@@ -22,6 +23,21 @@ export default function Cart(props) {
 
     function cartToggle() {
         cart.setCartContext(!cart.cartContext)
+    }
+
+    function removeItem(e){
+        let remove_index = e.target.getAttribute("name");   //get the value 
+
+        let original = clicked_products_index; //copy the array
+        console.log(original);
+
+        original = original.filter((item) => {  //removet the value in array
+            return item != remove_index;
+        })
+        
+        setIndex(original);     //set the array after removing the value
+        console.log(original);
+        console.log(e.target.getAttribute("name"));
     }
 
     return (
@@ -58,19 +74,21 @@ export default function Cart(props) {
                 <h2>Cart</h2>
             </div>
 
+
+            
             <div class={styles.clicked_products}>
                 {myArrayFiltered.map((pro) => {
                     return (
 
-                        <section className={styles.cart_products}>
+                        <section key={pro.id} className={styles.cart_products}>
                             <div className={styles.image_bg}>
                                 <img src={pro.image} />
                             </div>
                             <h2>{pro.title}</h2>
 
                             <div className={styles.cart_price}>
-                                <button className={styles.close_button} name={pro.id}>
-                                    <svg className={styles.close_svg} width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <button className={styles.close_button} refs='index' >
+                                    <svg className={styles.close_svg} name={pro.id} onClick={removeItem} width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_103_2)">
                                             <path d="M76 25.64L70.36 20L48 42.36L25.64 20L20 25.64L42.36 48L20 70.36L25.64 76L48 53.64L70.36 76L76 70.36L53.64 48L76 25.64Z" fill="white" />
                                         </g>

@@ -57,7 +57,7 @@ function Products() {
                 </div>
             </section>
             {/* Cart sidebar */}
-            <Cart value={productData} filter={clicked_products_index}/>
+            <Cart value={productData} filter={clicked_products_index} func={setIndex}/>
         </>
     )
 }
