@@ -303,6 +303,8 @@
   top: 0;
   right: 0; /*side bar*/
   z-index: 999;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
   width: 25em;
   height: 100%;
   background-color: #0c0c0c;
@@ -333,6 +335,12 @@
   background-color: rgb(39, 39, 39);
 }
 
+.clicked_products{
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 .cart_products{
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.3fr;
@@ -343,6 +351,10 @@
   border-top: 2px rgba(0, 0, 0, 0.5) solid;
   padding: 0.5em;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.image_bg{
+  background-color: white;
 }
 
 .cart_products img{
@@ -392,20 +404,25 @@
 .total_price{ 
   display: grid;
   grid-template-columns: 1fr 0.3fr;
-  position: absolute;
-  bottom: 0;
   height: 10em;
   width: 100%;
   justify-content: center;
   align-items: center;
   border-top: 3px rgba(0, 0, 0, 0.5) solid;
   padding: 0 4%;
+  z-index: 9999;
+  background-color: #161616;
 }
 
 .total_price p{
   text-align: center;
   font-size: 2em;
   border-right: 2px white solid;
+}
+
+.cart_added_products{
+  height: 60vh;
+  overflow-y: scroll;
 }
 
 @media only screen and (max-width: 769px){

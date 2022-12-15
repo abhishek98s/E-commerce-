@@ -14,12 +14,18 @@ function Products() {
             .then(data => setProductData(data.data))
     }
 
+    const [ clicked_products_index, setIndex ] = useState([]);
+
     useEffect(() => {
         apiData();
     }, [])
-    console.log(productData)
+    // console.log(productData)
 
-
+    function getatt(e){
+        let att = e.target.name;
+        setIndex([...clicked_products_index, att])
+        console.log(clicked_products_index)
+    }
 
     return (
         <>
@@ -42,7 +48,7 @@ function Products() {
                                 <div className={styles.product_down}>
                                     <h2>{product.title}</h2>
                                     <p>$ <span>{product.price}</span></p>
-                                    <button>Add to Cart</button>
+                                    <button name={product.id} onClick={getatt}>Add to Cart</button>
                                 </div>
                             </div>
 
@@ -51,7 +57,7 @@ function Products() {
                 </div>
             </section>
             {/* Cart sidebar */}
-            <Cart />
+            <Cart value={productData} filter={clicked_products_index}/>
         </>
     )
 }

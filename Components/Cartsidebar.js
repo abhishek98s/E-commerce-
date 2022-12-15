@@ -4,10 +4,23 @@ import books from '../public/images/books.jpg'
 import { useContext, useState } from "react"
 import AppContext from './AppContext'
 
-export default function Cart() {
+export default function Cart(props) {
     const cart = useContext(AppContext);
 
-    function cartToggle(){
+    let clicked_products = props.value;
+    let clicked_products_index = props.filter;
+    console.log(clicked_products_index)
+
+
+    const myArrayFiltered = clicked_products.filter((el) => {
+        return clicked_products_index.some((f) => {
+            return f == el.id;
+        });
+    });
+
+    console.log(myArrayFiltered);
+
+    function cartToggle() {
         cart.setCartContext(!cart.cartContext)
     }
 
@@ -18,16 +31,16 @@ export default function Cart() {
         })}>
             <div className={styles.cart_top_side}>
                 <button className={styles.cart_top_side_close_button} onClick={cartToggle}>
-                <svg  width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clipPath="url(#clip0_103_2)">
-                                <path d="M76 25.64L70.36 20L48 42.36L25.64 20L20 25.64L42.36 48L20 70.36L25.64 76L48 53.64L70.36 76L76 70.36L53.64 48L76 25.64Z" fill="white" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_103_2">
-                                    <rect width="96" height="96" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+                    <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clipPath="url(#clip0_103_2)">
+                            <path d="M76 25.64L70.36 20L48 42.36L25.64 20L20 25.64L42.36 48L20 70.36L25.64 76L48 53.64L70.36 76L76 70.36L53.64 48L76 25.64Z" fill="white" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_103_2">
+                                <rect width="96" height="96" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
                 </button>
                 <section className={styles.cartLogo}>
                     <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,33 +58,41 @@ export default function Cart() {
                 <h2>Cart</h2>
             </div>
 
-            <section className={styles.cart_products}>
-                <img src={books.src} />
-                <h2>title</h2>
+            <div class={styles.clicked_products}>
+                {myArrayFiltered.map((pro) => {
+                    return (
 
-                <div className={styles.cart_price}>
-                    <button className={styles.close_button}>
-                        <svg className={styles.close_svg} width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clipPath="url(#clip0_103_2)">
-                                <path d="M76 25.64L70.36 20L48 42.36L25.64 20L20 25.64L42.36 48L20 70.36L25.64 76L48 53.64L70.36 76L76 70.36L53.64 48L76 25.64Z" fill="white" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_103_2">
-                                    <rect width="96" height="96" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </button>
-                    <div className={styles.price_as}>
-                        <p>$<span>23</span></p>
-                        <div className={styles.plus_minus}>
-                            <button>-</button>
-                            <span>0</span>
-                            <button>+</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                        <section className={styles.cart_products}>
+                            <div className={styles.image_bg}>
+                                <img src={pro.image} />
+                            </div>
+                            <h2>{pro.title}</h2>
+
+                            <div className={styles.cart_price}>
+                                <button className={styles.close_button}>
+                                    <svg className={styles.close_svg} width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_103_2)">
+                                            <path d="M76 25.64L70.36 20L48 42.36L25.64 20L20 25.64L42.36 48L20 70.36L25.64 76L48 53.64L70.36 76L76 70.36L53.64 48L76 25.64Z" fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_103_2">
+                                                <rect width="96" height="96" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </button>
+                                <div className={styles.price_as}>
+                                    <p>$<span>{pro.price}</span></p>
+                                    <div className={styles.plus_minus}>
+                                        <button>-</button>
+                                        <span>0</span>
+                                        <button>+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>)
+                })}
+            </div>
 
             <section className={styles.total_price}>
                 <p>Total</p>
