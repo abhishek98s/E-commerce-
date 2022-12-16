@@ -24,7 +24,7 @@ function Products() {
     function getatt(e){
         let att = e.target.name;
         setIndex([...clicked_products_index, att])
-        console.log(clicked_products_index)
+        // console.log(clicked_products_index)
     }
 
     return (
