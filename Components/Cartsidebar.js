@@ -9,7 +9,7 @@ export default function Cart(props) {
 
     let clicked_products = props.value;
     let clicked_products_index = props.filter;
-    console.log(clicked_products_index)
+    // console.log(clicked_products_index)
 
     const setIndex = props.func;
 
@@ -19,7 +19,7 @@ export default function Cart(props) {
         });
     });
 
-    console.log(myArrayFiltered);
+    // console.log(myArrayFiltered);
 
     function cartToggle() {
         cart.setCartContext(!cart.cartContext)
@@ -29,15 +29,14 @@ export default function Cart(props) {
         let remove_index = e.target.getAttribute("name");   //get the value 
 
         let original = clicked_products_index; //copy the array
-        console.log(original);
+        // console.log(original);
 
         original = original.filter((item) => {  //removet the value in array
             return item != remove_index;
         })
         
         setIndex(original);     //set the array after removing the value
-        console.log(original);
-        console.log(e.target.getAttribute("name"));
+     
     }
 
     return (
