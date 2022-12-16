@@ -5,7 +5,9 @@ import { useContext, useState } from "react"
 import AppContext from './AppContext'
 
 export default function Cart(props) {
-    const cart = useContext(AppContext);
+    const {cart, no} = useContext(AppContext);
+    const [cartContext, setCartContext] = cart;
+    const [itemsnum, setItemsnum] = no;
 
     let clicked_products = props.value;
     let clicked_products_index = props.filter;
@@ -19,10 +21,12 @@ export default function Cart(props) {
         });
     });
 
-    // console.log(myArrayFiltered);
+    setItemsnum(myArrayFiltered.length)
+    
+    console.log(myArrayFiltered);
 
     function cartToggle() {
-        cart.setCartContext(!cart.cartContext)
+        setCartContext(!cartContext)
     }
 
     function removeItem(e){
@@ -39,10 +43,25 @@ export default function Cart(props) {
      
     }
 
+    
+
+    // code to push
+    function increase(e){
+        e.currentTarget.previousElementSibling.innerHTML++;
+    }
+
+    function decrease(e){
+        if(e.currentTarget.nextElementSibling.innerHTML <= 1){
+            return;
+        }
+        e.currentTarget.nextElementSibling.innerHTML--;
+    }
+    // code to push
+
     return (
         <div className={cn({
-            [styles.cartSidebar]: cart.cartContext === false,
-            [styles.cartSidebar_active]: cart.cartContext === true,
+            [styles.cartSidebar]: cartContext === false,
+            [styles.cartSidebar_active]: cartContext === true,
         })}>
             <div className={styles.cart_top_side}>
                 <button className={styles.cart_top_side_close_button} onClick={cartToggle}>
@@ -68,7 +87,7 @@ export default function Cart(props) {
                             </clipPath>
                         </defs>
                     </svg>
-                    <p>0</p>
+                    <p>{itemsnum}</p>
                 </section>
                 <h2>Cart</h2>
             </div>
@@ -101,9 +120,9 @@ export default function Cart(props) {
                                 <div className={styles.price_as}>
                                     <p>$<span>{pro.price}</span></p>
                                     <div className={styles.plus_minus}>
-                                        <button>-</button>
-                                        <span>0</span>
-                                        <button>+</button>
+                                        <button onClick={decrease}>-</button> {/*code to push*/}
+                                        <span>1</span>
+                                        <button onClick={increase}>+</button> {/*code to push*/}
                                     </div>
                                 </div>
                             </div>
