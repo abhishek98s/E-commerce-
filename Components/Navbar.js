@@ -7,7 +7,10 @@ import AppContext from './AppContext';
 // import products from '../pages/products';
 
 export default function Navbar() {
-    const cart = useContext(AppContext);
+    const {cart, no} = useContext(AppContext);
+    const [cartContext, setCartContext] = cart;
+    const [itemsnum, setItemsnum] = no;
+
     const [toggle, setToggle] = useState(false);
     const router = useRouter();
     ;
@@ -16,7 +19,7 @@ export default function Navbar() {
     }
 
     function cartToggle(){
-        cart.setCartContext(!cart.cartContext)
+        setCartContext(!cartContext)
     }
 
     if (router.pathname == '/products') {
@@ -36,7 +39,7 @@ export default function Navbar() {
                                 </clipPath>
                             </defs>
                         </svg>
-                        <p>0</p>
+                        <p>{itemsnum}</p>
                     </div>
 
                 </div>
