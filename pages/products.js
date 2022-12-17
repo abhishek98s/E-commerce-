@@ -22,7 +22,7 @@ function Products() {
     // console.log(productData)
 
     function getatt(e){
-        let att = e.target.name;
+        let att = e.target.getAttribute('name');
         setIndex([...clicked_products_index, att])
         // console.log(clicked_products_index)
     }
