@@ -12,13 +12,8 @@
     align-items: center;
     justify-content: space-evenly;
     border-top: 1px solid white;
-    /* min-height: 4rem; */
+    min-height: 4rem;
     margin: 0 4%;
-    padding: 1em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    margin: 0 auto;
 }
 
 .footer_box a:first-of-type{
