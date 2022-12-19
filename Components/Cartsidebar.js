@@ -98,7 +98,6 @@ export default function Cart(props) {
     // }
 
 
-
     return (
         <div className={cn({
             [styles.cartSidebar]: cartContext === false,
@@ -158,14 +157,14 @@ export default function Cart(props) {
                                         </defs>
                                     </svg>
                                 </button>
-                                <div className={styles.price_as}>
+                                {/* <div className={styles.price_as}>
                                     <p>$<span>{pro.price}</span></p>
-                                    {/* <div className={styles.plus_minus}>
-                                        <button names={pro.id} onClick={decrease}>-</button> 
+                                    <div className={styles.plus_minus}>
+                                        <button names={pro.id}>-</button> 
                                         <span>1</span>
-                                        <button names={pro.id} onClick={increase}>+</button> 
-                                    </div> */}
-                                </div>
+                                        <button names={pro.id} >+</button> 
+                                    </div>
+                                </div> */}
                             </div>
                         </section>)
                 })}

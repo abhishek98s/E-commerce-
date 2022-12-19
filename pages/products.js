@@ -9,6 +9,7 @@ import AppContext from "../Components/AppContext";
 
 function Products() {
     const [productData, setProductData] = useState([]);
+    const [filterArr, setFilterArr] = useState('');
     const apiData = async () => {
         await axios.get('https://fakestoreapi.com/products')
             .then(data => setProductData(data.data))
@@ -19,7 +20,7 @@ function Products() {
     useEffect(() => {
         apiData();
     }, [])
-    // console.log(productData)
+    console.log(productData)
 
     function getatt(e){
         let att = e.target.getAttribute('name');
@@ -27,15 +28,41 @@ function Products() {
         // console.log(clicked_products_index)
     }
 
+    function filter_func(productData){
+        if(!filterArr){
+            return productData;
+        }
+        return productData.category === filterArr;
+    }
+
+    const filterAll = () => setFilterArr('');
+    const filterMen = () => setFilterArr('men\'s clothing');
+    const filterWomen = () => setFilterArr('women\'s clothing');
+    const filterJewelery = () => setFilterArr('jewelery');
+    const filterElectornics = () => setFilterArr('electronics');
+
+
+
+
     return (
         <>
             <section className={styles.products_box}>
-                <div className={styles.categoty}>
+                <div className={styles.category}>
                     {/* <h2>Product Categories</h2> */}
+
+                    <div className={styles.category_filters}>
+                        <ul>
+                            <li onClick={filterAll}>All</li>
+                            <li onClick={filterMen}>Men's Clothing</li>
+                            <li onClick={filterWomen}>Women's Clothing</li>
+                            <li onClick={filterJewelery}>Jewelery</li>
+                            <li onClick={filterElectornics}>Electronics</li>
+                        </ul>
+                    </div>
 
                     <div className={styles.product_category}>
 
-                        {productData.map((product) =>
+                        {productData.filter((productData) => {return filter_func(productData)} ).map((product) =>
 
 
                             <div key={product.id} className={styles.productcard}>

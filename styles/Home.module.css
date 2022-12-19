@@ -182,7 +182,7 @@
   row-gap: 1em;
   align-content: space-evenly;
   justify-content: space-evenly;
-  margin: 5.5rem 4% 6rem 4%;
+  margin: 2em 4% 6em 4%;
 }
 
 .product_category > div:hover{
@@ -210,6 +210,35 @@
 .products_box{
   overflow-x: hidden;
 }
+
+.category{
+  display: grid;
+  grid-template-rows: 0.2fr auto;
+}
+
+.category_filters{
+  margin:  6em 0 0 0;
+}
+
+.category_filters ul{
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.category_filters ul li{
+  padding: 0.5em 0;
+  background-color: #0e0e0e;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  padding: 0.5em 1.5em;
+  max-width: 13em;
+  border-radius: 0 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
 .productcard{
   width: 15em;
   padding: 1em;
