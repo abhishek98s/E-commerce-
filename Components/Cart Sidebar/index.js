@@ -1,8 +1,7 @@
 import cn from 'classnames'
-import styles from "../styles/Home.module.css"
-import books from '../public/images/books.jpg'
+import styles from "./styles.module.scss"
 import { useContext, useEffect, useState } from "react"
-import AppContext from './AppContext'
+import AppContext from '../AppContext'
 
 export default function Cart(props) {
     const { cart, no } = useContext(AppContext);

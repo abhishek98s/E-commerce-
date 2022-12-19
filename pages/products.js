@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import styles from "../styles/Home.module.css"
 import Image from "next/image";
 import axios from 'axios'
-import Cart from '../Components/Cartsidebar'
+import Cart_Sidebar from '../Components/Cart Sidebar'
 
 import { useEffect, useState } from 'react';
 import AppContext from "../Components/AppContext";
@@ -84,7 +84,7 @@ function Products() {
                 </div>
             </section>
             {/* Cart sidebar */}
-            <Cart value={productData} filter={clicked_products_index} func={setIndex}/>
+            <Cart_Sidebar value={productData} filter={clicked_products_index} func={setIndex}/>
         </>
     )
 }
