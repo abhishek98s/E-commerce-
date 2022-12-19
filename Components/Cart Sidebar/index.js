@@ -133,7 +133,7 @@ export default function Cart(props) {
 
 
 
-            <div class={styles.clicked_products}>
+            <div className={styles.clicked_products}>
                 {myArrayFiltered.map((pro) => {
                     return (
 
