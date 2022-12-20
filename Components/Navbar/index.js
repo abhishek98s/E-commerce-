@@ -1,9 +1,9 @@
-import styles from '../styles/Home.module.css';
+import styles from './styles.module.scss';
 import Link from 'next/link'
 import { useContext, useState } from 'react';
 import cn from 'classnames'
 import { useRouter } from 'next/router';
-import AppContext from './AppContext';
+import AppContext from '../AppContext';
 // import products from '../pages/products';
 
 export default function Navbar() {
