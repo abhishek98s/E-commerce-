@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import  fstyles from '../styles/Footer.module.css'
+import  styles from './styles.module.scss'
 import { useRouter } from 'next/router'
 
 function Footer(){
@@ -10,8 +10,8 @@ function Footer(){
     }else{
         return(
             <>
-                <div className={fstyles.footer_box}>
-                    <Link href='/' legacyBehavior><a className={fstyles.logo}>ACEHOP</a></Link>        
+                <div className={styles.footer_box}>
+                    <Link href='/' legacyBehavior><a className={styles.logo}>ACEHOP</a></Link>        
 
                     <Link href="/" legacyBehavior><a>Home</a></Link>
                     <Link href="/hg" legacyBehavior><a>Products</a></Link>

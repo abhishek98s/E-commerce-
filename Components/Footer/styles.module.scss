@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'anurati';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Anurati Regular'), url('../../public/Anurati-Regular.woff') format('woff');
+}
+
+.footer_box{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-top: 1px solid white;
+  min-height: 4rem;
+  margin: 0 4%;
+
+  .footer_box a{
+    font-size: 0.8rem;
+    
+    &:first-of-type{
+      font-size: 1.3rem;
+    }
+  }
+
+  .logo{
+    font-family: anurati;
+  }
+}
