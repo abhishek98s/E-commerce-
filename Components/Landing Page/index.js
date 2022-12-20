@@ -1,4 +1,4 @@
-import styles from '../styles/Home.module.css'
+import styles from './styles.module.scss'
 
 export default function LandingPage() {
 
@@ -34,15 +34,3 @@ export default function LandingPage() {
     </>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
