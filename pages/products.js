@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import styles from "../styles/Home.module.css"
 import Image from "next/image";
 import axios from 'axios'
+import Head from "next/head";
 import Cart_Sidebar from '../Components/Cart Sidebar'
 
 import { useEffect, useState } from 'react';
@@ -46,6 +47,9 @@ function Products() {
 
     return (
         <>
+            <Head>
+                <title>Shopping Cart</title>
+            </Head>
             <section className={styles.products_box}>
                 <div className={styles.category}>
                     {/* <h2>Product Categories</h2> */}
