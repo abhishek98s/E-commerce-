@@ -74,11 +74,13 @@
   height: 20em;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
   display: grid;
+  border-radius: 20px;
   grid-template-rows: 1fr auto;
 }
 
 .product_img{
   background-color: white;
+  border-radius: 10px;
 }
 
 .product_img img{
@@ -103,10 +105,13 @@
 .product_down button{
   text-align: center;
   height: 2em;
-  background-color: orangered;
-  min-width: 100%;
+  background-color: #7e7e7e;
+  min-width: 55%;
+  margin-left: 50%;
+  transform: translate(-50%);
   box-shadow: 5px 3px 5px rgba(0, 0, 0, 0.5);
   transition: .4s;
+  border-radius: 20px;
 }
 
 .product_down button:hover{
