@@ -14,7 +14,7 @@ function Footer(){
                     <Link href='/' legacyBehavior><a className={styles.logo}>ACEHOP</a></Link>        
 
                     <Link href="/" legacyBehavior><a>Home</a></Link>
-                    <Link href="/hg" legacyBehavior><a>Products</a></Link>
+                    <Link href="/products" legacyBehavior><a>Products</a></Link>
                     <Link href="" legacyBehavior><a>Blogs</a></Link>
                     <Link href="/about" legacyBehavior><a>About Us</a></Link>    
                 </div>
