@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import  styles from './styles.module.scss'
-import { useRouter } from 'next/router'
+import  styles from './styles.module.scss';
+import { useRouter } from 'next/router';
 
 function Footer(){
     const {pathname} = useRouter();
    
     if(pathname === "/login" || pathname === "/register"){
-        return
+        return;
     }else{
         return(
             <>
