@@ -15,7 +15,7 @@ function Footer(){
 
                     <Link href="/" legacyBehavior><a>Home</a></Link>
                     <Link href="/products" legacyBehavior><a>Products</a></Link>
-                    <Link href="" legacyBehavior><a>Blogs</a></Link>
+                    <Link href="/blogs" legacyBehavior><a>Blogs</a></Link>
                     <Link href="/about" legacyBehavior><a>About Us</a></Link>    
                 </div>
             </>
