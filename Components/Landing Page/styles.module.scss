@@ -1,6 +1,6 @@
 .backgroundimg{
     width: 100%;
-    height: 100vh;
+    height: 800px;
     display: grid;
     place-items: center;
     background: linear-gradient(rgba(59, 59, 59, 0.5), rgba(43, 43, 43, 0.5)), url('../../public/ecommerce.jpg');
@@ -9,18 +9,22 @@
     background-size: cover; 
     filter: brightness(119%) saturate(200%);
 
+    @media screen and (max-width: 750px) {
+        height: 870px;
+    }
+
     .slogen{
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 10vh;
+        font-size: 5rem;
         max-width: 40rem;
         text-align: center;
         transition: right 0.2s ease 0s;
-        padding-top: 26vh;
+        padding-top: 2em;
         text-shadow: 0px 0px 3px white;
     }
 
     p{
-        font-size: 4vh;
+        font-size: 2rem;
         text-align: center;
     }
 
