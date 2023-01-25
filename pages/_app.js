@@ -7,11 +7,11 @@ import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
   const [cartContext, setCartContext] = useState(false);
-  const [itemsnum, setItemsnum] = useState(1);
+  const [numOfItems, setNumOfItems] = useState(1);
 
 
   return (
-    <AppContext.Provider value={{cart: [ cartContext, setCartContext ], no: [itemsnum, setItemsnum]}}>
+    <AppContext.Provider value={{showCart: [ cartContext, setCartContext ], totalNumOfItems: [numOfItems, setNumOfItems]}}>
       <Layout>
         <Component {...pageProps} />
       </Layout>

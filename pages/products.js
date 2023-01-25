@@ -7,41 +7,62 @@ import Cart_Sidebar from "../Components/Cart Sidebar";
 
 import { useEffect, useState } from "react";
 import AppContext from "../Components/AppContext";
+import Cards from "../Components/Cards";
+
 
 function Products() {
   const [productData, setProductData] = useState([]);
-  const [filterArr, setFilterArr] = useState("");
-  const apiData = async () => {
-    await axios
-      .get("https://fakestoreapi.com/products")
-      .then((data) => setProductData(data.data));
-  };
-
-  const [clicked_products_index, setIndex] = useState([]);
+  const [filterData, setFilterData] = useState("");
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
+    const apiData = async () => {
+      await axios
+        .get("https://fakestoreapi.com/products")
+        .then((data) => setProductData(data.data));
+    };
+
     apiData();
   }, []);
-  console.log(productData);
 
-  function getatt(e) {
-    let att = e.target.getAttribute("name");
-    setIndex([...clicked_products_index, att]);
-    // console.log(clicked_products_index)
+  function AddToCart(items) {
+    if (cart.indexOf(items) !== -1) return;
+
+    if(items.amount == undefined){
+      items.amount = 1;
+    }
+
+    setCart([...cart, items]);
+    console.log(cart);
   }
 
+  const handleChange = (item, d) => {
+    const ind = cart.indexOf(item);
+    const arr = cart;
+
+    if(arr[ind].amount == undefined){
+      arr[ind].amount = 1;
+    }
+    arr[ind].amount += d;
+
+    // if (arr[ind].amount === 0) arr[ind].amount = 1;
+    setCart([...arr]);
+    console.log(cart);
+  }
+
+  // filter the data and show it accordingly
   function filter_func(productData) {
-    if (!filterArr) {
+    if (!filterData) {
       return productData;
     }
-    return productData.category === filterArr;
+    return productData.category === filterData;
   }
 
-  const filterAll = () => setFilterArr("");
-  const filterMen = () => setFilterArr("men's clothing");
-  const filterWomen = () => setFilterArr("women's clothing");
-  const filterJewelery = () => setFilterArr("jewelery");
-  const filterElectornics = () => setFilterArr("electronics");
+  const filterAll = () => setFilterData("");
+  const filterMen = () => setFilterData("men's clothing");
+  const filterWomen = () => setFilterData("women's clothing");
+  const filterJewelery = () => setFilterData("jewelery");
+  const filterElectornics = () => setFilterData("electronics");
 
   return (
     <>
@@ -68,29 +89,14 @@ function Products() {
                 return filter_func(productData);
               })
               .map((product) => (
-                <div key={product.id} className={styles.productcard}>
-                  <div className={styles.product_top}>
-                    <div className={styles.product_img}>
-                      <Image
-                        src={product.image}
-                        priority="true"
-                        alt={product.title}
-                        width="200"
-                        height="200"
-                      />
-                    </div>
-                  </div>
-
-                  <div className={styles.product_down}>
-                    <h2>{product.title}</h2>
-                    <p>
-                      $ <span>{product.price}</span>
-                    </p>
-                    <button name={product.id} onClick={getatt}>
-                      Add to Cart
-                    </button>
-                  </div>
-                </div>
+                <Cards
+                  key={product.id}
+                  className={styles.productcard}
+                  items={product}
+                  AddToCart={AddToCart}
+                  cart={cart}
+                  setCart={setCart}
+                />
               ))}
           </div>
         </div>
@@ -98,8 +104,9 @@ function Products() {
       {/* Cart sidebar */}
       <Cart_Sidebar
         value={productData}
-        filter={clicked_products_index}
-        func={setIndex}
+        handleChange={handleChange}
+        cart={cart}
+        setCart={setCart}
       />
     </>
   );
