@@ -8,6 +8,7 @@ import Cart_Sidebar from "../Components/Cart Sidebar";
 import { useEffect, useState } from "react";
 import AppContext from "../Components/AppContext";
 import Cards from "../Components/Cards";
+import LazyLoading from "../Components/laxy loading";
 
 export async function getServerSideProps() {
   // Fetch data from external API
@@ -74,6 +75,14 @@ function Products({data}) {
   const filterJewelery = () => setFilterData("jewelery");
   const filterElectornics = () => setFilterData("electronics");
 
+
+  function isdata(){
+    if(productData[0] == undefined){
+      return true;
+    }else{
+      return false;
+    }
+  }
   return (
     <>
       <Head>
@@ -92,6 +101,8 @@ function Products({data}) {
               <li onClick={filterElectornics}>Electronics</li>
             </ul>
           </div>
+
+          {isdata() && <LazyLoading />}
 
           <div className={styles.product_category}>
             {productData
