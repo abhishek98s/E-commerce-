@@ -9,20 +9,30 @@ import { useEffect, useState } from "react";
 import AppContext from "../Components/AppContext";
 import Cards from "../Components/Cards";
 
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`https://fakestoreapi.com/products`)
+  const data = await res.json()
 
-function Products() {
+  // Pass data to the page via props
+  return { props: { data } }
+}
+
+
+function Products({data}) {
   const [productData, setProductData] = useState([]);
   const [filterData, setFilterData] = useState("");
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    const apiData = async () => {
-      await axios
-        .get("https://fakestoreapi.com/products")
-        .then((data) => setProductData(data.data));
-    };
+    // const apiData = async () => {
+    //   await axios
+    //     .get("https://fakestoreapi.com/products")
+    //     .then((data) => setProductData(data.data));
+    // };
 
-    apiData();
+    // apiData();
+    setProductData(data);
   }, []);
 
   function AddToCart(items) {
