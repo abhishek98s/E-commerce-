@@ -1,8 +1,7 @@
+import { Slidedown } from '../../public/svg';
 import styles from './styles.module.scss'
 
 export default function LandingPage() {
-
-  
 
   function topFunction() {
     document.body.scrollTop = window.innerHeight;
@@ -11,7 +10,7 @@ export default function LandingPage() {
 
   return (
     <>
-      <div className={styles.backgroundimg}>
+      <main className={styles.backgroundimg}>
         <h1 className={styles.slogen}>
           Cool and Exciting Products
         </h1>
@@ -19,18 +18,9 @@ export default function LandingPage() {
 
         <div onClick={topFunction} className={styles.button} >
           <button>Learn More</button>
-          <svg id={styles.down_arrow} width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clipPath="url(#clip0_11_2)">
-              <path d="M29.64 34.36L48 52.68L66.36 34.36L72 40L48 64L24 40L29.64 34.36Z" fill="white" />
-            </g>
-            <defs>
-              <clipPath id="clip0_11_2">
-                <rect width="96" height="96" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
+          <Slidedown styles={styles} />
         </div>
-      </div>
+      </main>
     </>
   )
 }

@@ -46,4 +46,19 @@ function CartSvg() {
   );
 }
 
-export { Close, CartSvg };
+function Slidedown({styles}) {
+  return (
+    <svg id={styles.down_arrow} width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clipPath="url(#clip0_11_2)">
+        <path d="M29.64 34.36L48 52.68L66.36 34.36L72 40L48 64L24 40L29.64 34.36Z" fill="white" />
+      </g>
+      <defs>
+        <clipPath id="clip0_11_2">
+          <rect width="96" height="96" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
+export { Close, CartSvg, Slidedown };
