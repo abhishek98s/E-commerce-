@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
-import axios from "axios";
 import Head from "next/head";
 import Cart_Sidebar from "../Components/Cart Sidebar";
 
